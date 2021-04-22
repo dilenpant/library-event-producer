@@ -1,0 +1,1 @@
+curl -i \\ -d '{"libraryEventId":null,"book":{"bookId":456,"bookName":"Kafka using SpringBoot","bookAuthor":"Dilendra"}}' \\ -H "Content-Type: application/json" \\ -X POST http://localhost:8081/v1/libraryevent
