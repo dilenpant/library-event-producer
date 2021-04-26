@@ -21,7 +21,6 @@ public class LibraryEventProducer {
     @Autowired
     ObjectMapper objectMapper;
     public void sendLibraryEvent(LibraryEvent libraryEvent) throws JsonProcessingException {
-        System.out.println("sendLibraryEvent------------");
         Integer key =  libraryEvent.getLibraryEventId();
         String value = objectMapper.writeValueAsString(libraryEvent);
        ListenableFuture<SendResult<Integer, String>> listenableFuture =  kafkaTemplate.sendDefault(key, value);
