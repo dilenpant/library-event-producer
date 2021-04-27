@@ -31,8 +31,9 @@ public class LibraryEventController {
         //-H "Content-Type: application/json" \
         //-X POST http://localhost:8080/v1/libraryevent
        // libraryEventProducer.sendLibraryEvent(libraryEvent);
-        SendResult<Integer, String> sendResult = libraryEventProducer.sendLibraryEventSynchronus(libraryEvent);
-        log.info("Before sendLibraryEvents : {}", sendResult.toString());
+        //SendResult<Integer, String> sendResult = libraryEventProducer.sendLibraryEventSynchronus(libraryEvent);
+        libraryEventProducer.sendLibraryEventAsync(libraryEvent);
+        //log.info("Before sendLibraryEvents : {}", sendResult.toString());
         return ResponseEntity.status(HttpStatus.CREATED).body(libraryEvent);
     }
 
