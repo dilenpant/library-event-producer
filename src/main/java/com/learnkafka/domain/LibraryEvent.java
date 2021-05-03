@@ -1,7 +1,6 @@
 package com.learnkafka.domain;
 
 import lombok.*;
-import org.springframework.validation.annotation.Validated;
 
 @AllArgsConstructor
 @NoArgsConstructor
