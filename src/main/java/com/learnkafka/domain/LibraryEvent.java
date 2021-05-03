@@ -1,9 +1,6 @@
 package com.learnkafka.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,5 +9,6 @@ import lombok.NoArgsConstructor;
 public class LibraryEvent {
     private Integer libraryEventId;
     private LibraryEventType libraryEventType;
+    @NonNull
     private Book book;
 }
