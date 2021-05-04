@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -45,7 +46,7 @@ public class LibraryEventControllerUnitTest {
                 .build();
 
         String json = objectMapper.writeValueAsString(libraryEvent);
-        doNothing().when(libraryEventProducer).sendLibraryEventAsync(isA(LibraryEvent.class));
+        when(libraryEventProducer.sendLibraryEventAsync(isA(LibraryEvent.class))).thenReturn(null);
         mockMvc.perform(post("/v1/libraryevent")
         .content(json)
         .contentType(MediaType.APPLICATION_JSON))
@@ -68,7 +69,7 @@ public class LibraryEventControllerUnitTest {
                 .build();
 
         String json = objectMapper.writeValueAsString(libraryEvent);
-        doNothing().when(libraryEventProducer).sendLibraryEventAsync(isA(LibraryEvent.class));
+        when(libraryEventProducer.sendLibraryEventAsync(isA(LibraryEvent.class))).thenReturn(null);
 
         // Expected
         String errorMessage = "boob.bookAuthor must not be blank, book.bookId must not be blank";
