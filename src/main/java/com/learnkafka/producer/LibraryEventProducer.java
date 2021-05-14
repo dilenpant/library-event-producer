@@ -96,7 +96,7 @@ public class LibraryEventProducer {
     }
 
     private void handleSuccess(Integer key, String value, SendResult<Integer, String> result) {
-        log.info("Message sent successfully for the key : {} and the value is : {}, partation is : {}", key, value, result.getProducerRecord().partition());
+        log.info("Message sent successfully for the key : {} and the value is : {}, partition is : {}", key, value, result.getProducerRecord().partition());
     }
 
     private void handleFailure(Integer key, String value, Throwable ex) {
