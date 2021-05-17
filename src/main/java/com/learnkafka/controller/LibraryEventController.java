@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,15 @@ public class LibraryEventController {
         return ResponseEntity.status(HttpStatus.CREATED).body(libraryEvent);
     }
 
+    @PutMapping("/v1/libraryevent")
+    public ResponseEntity<?> putLibraryEvent(@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException {
+
+        if(libraryEvent.getLibraryEventId() == null ){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please pass the library event id");
+        }
+        libraryEvent.setLibraryEventType(LibraryEventType.UPDATE);
+        libraryEventProducer.sendLibraryEventAsync(libraryEvent);
+        return ResponseEntity.status(HttpStatus.OK).body(libraryEvent);
+    }
 
 }
