@@ -1,1 +1,46 @@
 curl -i \\ -d '{"libraryEventId":null,"book":{"bookId":456,"bookName":"Kafka using SpringBoot","bookAuthor":"Dilendra"}}' \\ -H "Content-Type: application/json" \\ -X POST http://localhost:8081/v1/libraryevent
+
+
+
+  990  ./zookeeper-server-start.sh ../config/zookeeper.properties
+  991  ./bin/zookeeper-server.stop.sh config/zookeeper.properties
+  992  /zookeeper-server.stop.sh config/zookeeper.properties
+  993  zookeeper-server.stop.sh config/zookeeper.properties
+  994  ls
+  995  zookeeper-server-stop.sh config/zookeeper.properties
+  996  ..zookeeper-server-stop.sh config/zookeeper.properties
+  997  .zookeeper-server-stop.sh config/zookeeper.properties
+  998  clear
+  999  ls
+ 1000  zookeeper-server-stop.sh
+ 1001  ../zookeeper-server-stop.sh
+ 1002  pwd
+ 1003  clear
+ 1004  htop
+ 1005  service  --status-all
+ 1006  clear
+ 1007  ./zookeeper-server-start.sh ../config/zookeeper.properties
+ 1008  sudo bin/zookeeper-server-stop.sh
+ 1009  cd ..
+ 1010  sudo bin/zookeeper-server-stop.sh
+ 1011  bin/zookeeper-server-start.sh config/zookeeper.properties
+ 1012  ls
+ 1013  vim config/zookeeper.properties 
+ 1014  bin/zookeeper-server-start.sh config/zookeeper.properties
+ 1015  vim config/zookeeper.properties 
+ 1016  clear
+ 1017  bin/zookeeper-server-start.sh config/zookeeper.properties
+ 1018  ./kafka-server-start.sh ../config/server.properties
+ 1019  ./kafka-server-start.sh ../config/server1.properties
+ 1020  ./kafka-server-start.sh ../config/server-1.properties
+ 1021  ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test-topic-replicated --from-beginning
+ 1022  ./kafka-topics.sh --zookeeper localhost:2181 --describe
+ 1023  ./kafka-topics.sh --zookeeper localhost:2181 --describe test-topic-replicated
+ 1024  ./kafka-topics.sh --zookeeper localhost:2181 --describe --topic test-topic-replicated
+ 1025  ./kafka-topics.sh --create --topic test-topic-replicated -zookeeper localhost:2181 --replication-factor 3 --partitions 3
+ 1026  ./kafka-console-producer.sh --broker-list localhost:9092 --topic test-topic-replicated
+ 1027  ./kafka-server-start.sh ../config/server-2.properties
+ 1028  cd ~/Desktop/
+ 1029  cd 2021/apache-kafka/kafka_2.13-2.8.0/bin/
+ 1030  clear
+ 1031  ./zookeeper-server-start.sh ../config/zookeeper.properties
